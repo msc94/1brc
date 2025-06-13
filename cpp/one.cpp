@@ -39,17 +39,15 @@ int main()
         data.average = (data.average * (data.total - 1) + parsed_temperature) / data.total;
     }
 
+    std::cout << "City;Min;Max;Average;Total Measurements\n";
     for (const auto &pair : city_data)
     {
         const auto &city = pair.first;
         const auto &data = pair.second;
 
-        std::cout << "City: " << city
-                  << ", Min: " << data.min
-                  << ", Max: " << data.max
-                  << ", Average: " << data.average
-                  << ", Total Measurements: " << data.total
-                  << '\n';
+        std::cout << city << ";" << data.min << ";"
+                  << data.max << ";" << data.average << ";"
+                  << data.total << '\n';
     }
 
     return 0;
