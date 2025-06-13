@@ -2,15 +2,16 @@
 #include <fstream>
 #include <cstdint>
 #include <string>
+#include <algorithm>
 #include <map>
 #include <unordered_map>
 
 struct Data
 {
-    double min;
-    double max;
-    double average;
-    std::uint64_t total;
+    double min{0.0};
+    double max{0.0};
+    double average{0.0};
+    std::uint64_t total{0};
 };
 
 int main()
