@@ -5,11 +5,12 @@
 #include <algorithm>
 #include <map>
 #include <unordered_map>
+#include <limits>
 
 struct Data
 {
-    double min{0.0};
-    double max{0.0};
+    double min{std::numeric_limits<double>::max()};
+    double max{std::numeric_limits<double>::min()};
     double average{0.0};
     std::uint64_t total{0};
 };
