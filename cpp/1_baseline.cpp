@@ -9,6 +9,22 @@
 
 #include "common.h"
 
+std::vector<CityData> ConvertToVector(const std::unordered_map<std::string, CityData> &city_data)
+{
+    std::vector<CityData> result;
+    result.reserve(city_data.size());
+    for (const auto &kv : city_data)
+    {
+        result.push_back(kv.second);
+    }
+
+    std::sort(result.begin(), result.end(),
+              [](const CityData &a, const CityData &b)
+              { return a.name < b.name; });
+
+    return result;
+}
+
 int main()
 {
     auto fstream = std::ifstream("measurements.txt");
